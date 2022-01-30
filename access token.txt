@@ -1,0 +1,13 @@
+Od deva dobijemo sve sto je potrebno i izgleda ovako
+GetCode request
+https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.email&auth_url=https://accounts.google.com/o/oauth2/v2/auth&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&response_type=code&redirect_uri=https://rahulshettyacademy.com/getCourse.php&state=randomString
+Idemo na taj URL i ulogujemo se, nakon logovanja kopiramo URL i vracamo u postman
+Random request
+https://rahulshettyacademy.com/getCourse.php?state=randomString&code=4%2F0AX4XfWjFkTzrw20xtHmNU-aXVkAcIyAPQ36mMQEAvU6uT_YthRqb1CD9gGAcd8pzy7Gddg&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=consent#
+Odatle izvucemo "code" koji ce nam trebati u sledecem requestu
+ExchangeCode request
+https://www.googleapis.com/oauth2/v4/token?code=4%2F0AX4XfWjFkTzrw20xtHmNU-aXVkAcIyAPQ36mMQEAvU6uT_YthRqb1CD9gGAcd8pzy7Gddg&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&client_secret=erZOWM9g3UtwNRj340YYaK_W&redirect_uri=https://rahulshettyacademy.com/getCourse.php&grant_type=authorization_code#
+Ovo takodje dobijemo od deva i unesemo code koji smo izvukli
+U tom requestu cemo dobiti access token koji ubacujemo najzad u pravi zahtev
+ActualRequest request
+https://rahulshettyacademy.com/getCourse.php?access_token=ya29.a0ARrdaM-SmDWUKaXlJOqoD5Lgvw275A9x7nxinT3dZt1jaMYmjLFIKJHeIpagbf2dcuu-oqkqQrEaliHC21fHROeE2OMOlIiUnpR-oU_NqY8Yyo9NWIesnncg9wMtHdDe1zUCEnSC_rfV9BTMNgkpmh_IHe2_
